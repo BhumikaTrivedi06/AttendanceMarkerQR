@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "107713400845",
+    "firebase_url": "https://attendancemarkerqr-default-rtdb.firebaseio.com",
+    "project_id": "attendancemarkerqr",
+    "storage_bucket": "attendancemarkerqr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107713400845:android:14f1916e19f6dba6b18544",
+        "android_client_info": {
+          "package_name": "com.example.attendancemarkerqr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107713400845-s3mgiiierl0pb630la7fdf5urik4tj7g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.attendancemarkerqr",
+            "certificate_hash": "7d55d2857e2a7f6f524a7d7b47a7330a7d8b7ec0"
+          }
+        },
+        {
+          "client_id": "107713400845-5r1lrip5kpncrmtreom4jhi99fgodeej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvbzHZUKw2kiu8nwWUF5ioHP0rJDg-GDI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107713400845-5r1lrip5kpncrmtreom4jhi99fgodeej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
