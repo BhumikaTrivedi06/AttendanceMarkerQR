@@ -16,15 +16,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final Intent intent = new Intent(MainActivity.this , ChoicePage.class);
-        Timer timer = new Timer();
+        Timer timer = new Timer();              //for splash screen
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-
-
                 startActivity(intent);
                 //      finish();
             }
-        },3000);
+        },3000);            //milisecond
+
     }
 }
+
+//Intent intent_name = new Intent(Present_Activity_name.this,next_Activity_name.class);

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.text.TextUtils;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -44,13 +45,21 @@ public class stud_login_page extends AppCompatActivity {
 
                 name = sloginName.getText().toString().toLowerCase();
                 pass = sloginPass.getText().toString();
+                if(TextUtils.isEmpty(name)){
+                    sloginName.setError("UserName is Required.");
+                    return;
+                }
+                if(TextUtils.isEmpty(pass)){
+                    sloginPass.setError("Password is Required.");
+                    return;
+                }
                 dbref.child("Student").child(name).addListenerForSingleValueEvent(listener);
                 //go_to_stud_dashboard();
             }
 
             ValueEventListener listener = new ValueEventListener() {
                 @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                public void onDataChange(@NonNull DataSnapshot snapshot) {   //here Snapshot=Username
                     if(snapshot.exists()){
                         String passwrd = snapshot.child("pass").getValue(String.class);
 

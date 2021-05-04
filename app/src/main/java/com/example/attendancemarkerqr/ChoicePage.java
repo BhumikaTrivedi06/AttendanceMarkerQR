@@ -16,11 +16,11 @@ public class ChoicePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choice_page);
 
-        stud_button = (Button)findViewById(R.id.student_but);
+        stud_button = (Button)findViewById(R.id.student_but);    //create Reference to java class(R.id.id_name)
         stud_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openStudLogin();
+                openStudLogin();    //code to perform action
             }
         });
 
@@ -35,13 +35,18 @@ public class ChoicePage extends AppCompatActivity {
 
     public void openStudLogin()
     {
-        Intent intent1 = new Intent(this,stud_login_page.class);
+        Intent intent1 = new Intent(ChoicePage.this,stud_login_page.class);
         startActivity(intent1);
     }
 
     public void openTeachLogin()
     {
-        Intent intent2 = new Intent(this,teach_login_page.class);
+        Intent intent2 = new Intent(ChoicePage.this,teach_login_page.class);
         startActivity(intent2);
     }
 }
+
+
+
+
+//2 methods-----1.onClick Method  2.setOnClickListener

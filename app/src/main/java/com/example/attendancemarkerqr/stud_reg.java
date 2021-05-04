@@ -28,8 +28,6 @@ public class stud_reg extends AppCompatActivity {
 
     DatabaseReference dref;
 
-    public static String prn;
-
     //public FirebaseAuth fAuth;
 
     @Override
@@ -57,11 +55,72 @@ public class stud_reg extends AppCompatActivity {
                 String username = susername.getText().toString().toLowerCase();
                 String mobile = smobile.getText().toString();
                 String dept = sdept.getText().toString();
-                prn = sprn.getText().toString();
+                String prn = sprn.getText().toString();
                 String year = syear.getText().toString();
                 String clg = sclg.getText().toString();
                 String email = sEmail.getText().toString().trim();
                 String password = sPassword.getText().toString().trim();
+
+                if(TextUtils.isEmpty(name))   //TextUtils.isEmpty(String_name)
+                {
+                    sfullname.setError("Fullname is Required.");
+                    return;
+                }
+                if(TextUtils.isEmpty(username))
+                {
+                    susername.setError("Username is Required.");
+                    return;
+                }
+                if(TextUtils.isEmpty(email))
+                {
+                    sEmail.setError("Email is Required.");
+                    return;
+                }
+                else if(TextUtils.isEmpty(mobile))
+                {
+                    smobile.setError("Mobile No is Required.");
+                    return;
+                }
+                else if(TextUtils.isEmpty(dept))
+                {
+                    sdept.setError("Department is Required.");
+                    return;
+                }
+                else if(TextUtils.isEmpty(prn))
+                {
+                    sprn.setError("PRN is Required.");
+                    return;
+                }
+                else if(TextUtils.isEmpty(clg))
+                {
+                    sclg.setError("College is Required.");
+                    return;
+                }
+                else if(TextUtils.isEmpty(year))
+                {
+                    syear.setError("Year is Required.");
+                    return;
+                }
+                else if(TextUtils.isEmpty(password))
+                {
+                    sPassword.setError("College is Required.");
+                    return;
+                }
+                if(mobile.length() < 10)
+                {
+                    smobile.setError("Mobile No Must be 10 Characters");
+                    return;
+                }
+                if(year.length() > 1)
+                {
+                    syear.setError("Enter Valid year");
+                    return;
+                }
+                if(password.length() < 6)
+                {
+                    sPassword.setError("Password Must be >= 6 Characters");
+                    return;
+                }
 
                 Student st = new Student(name,email,username,password,dept,year,prn,mobile,clg);
                 dref.child("Student").child(username).setValue(st).addOnFailureListener(new OnFailureListener() {

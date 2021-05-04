@@ -61,6 +61,69 @@ public class teach_reg extends AppCompatActivity {
                 String email = tEmail.getText().toString().trim();
                 String password = tPassword.getText().toString().trim();
 
+                if(TextUtils.isEmpty(name))
+                {
+                    tfullname.setError("Fullname is Required.");
+                    return;
+                }
+                if(TextUtils.isEmpty(username))
+                {
+                    tusername.setError("Username is Required.");
+                    return;
+                }
+                if(TextUtils.isEmpty(email))
+                {
+                    tEmail.setError("Email is Required.");
+                    return;
+                }
+                else if(TextUtils.isEmpty(mobile))
+                {
+                    tmobile.setError("Mobile No is Required.");
+                    return;
+                }
+                else if(TextUtils.isEmpty(dept))
+                {
+                    tdept.setError("Department is Required.");
+                    return;
+                }
+                else if(TextUtils.isEmpty(prn))
+                {
+                    tprn.setError("Unique ID is Required.");
+                    return;
+                }
+                else if(TextUtils.isEmpty(clg))
+                {
+                    tclg.setError("College is Required.");
+                    return;
+                }
+                else if(TextUtils.isEmpty(year))
+                {
+                    tyear.setError("Year is Required.");
+                    return;
+                }
+                else if(TextUtils.isEmpty(password))
+                {
+                    tPassword.setError("College is Required.");
+                    return;
+                }
+                if(mobile.length() < 10)
+                {
+                    tmobile.setError("Mobile No Must be 10 Characters");
+                    return;
+                }
+                if(year.length() > 1)
+                {
+                    tyear.setError("Enter Valid year");
+                    return;
+                }
+                if(password.length() < 6)
+                {
+                    tPassword.setError("Password Must be >= 6 Characters");
+                    return;
+                }
+
+
+
                 Student st = new Student(name, email, username, password, dept, year, prn, mobile, clg);
                 dref.child("Staff").child(username).setValue(st).addOnFailureListener(new OnFailureListener() {
                     @Override

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,6 +43,14 @@ public class teach_login_page extends AppCompatActivity {
             public void onClick(View view) {
                 name = tloginName.getText().toString().toLowerCase();
                 pass = tloginPass.getText().toString();
+                if(TextUtils.isEmpty(name)){
+                    tloginName.setError("UserName is Required.");
+                    return;
+                }
+                if(TextUtils.isEmpty(pass)){
+                    tloginPass.setError("Password is Required.");
+                    return;
+                }
                 dbref.child("Staff").child(name).addListenerForSingleValueEvent(listener);
                 //go_to_teach_board();
             }
